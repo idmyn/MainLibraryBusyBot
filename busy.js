@@ -14,7 +14,8 @@ bot.onText(/./, (msg) => {
   // is the user asking for help?
   if (/help/i.test(msg.text)) {
     const help = `
-This is bot to check how busy the University of Edinburgh's Main Library is. \
+This is an unofficial bot to check \
+how busy the University of Edinburgh's Main Library is. \
 You prompted this response by sending a message containing 'help'. \
 Any message without the word 'help' should trigger a response with \
 information about how busy the library is.
@@ -24,6 +25,8 @@ with a forward slash* (try '/busy').
 
 If you have any problems, or further questions, get in touch! \
 My email address is hello@davidmyno.rs 👨‍💻
+
+[(The code for this project can be viewed on GitHub)](https://github.com/idmyn/MainLibraryBusyBot)
     `
     bot.sendMessage(msg.chat.id, help, {parse_mode: 'Markdown'})
   }
