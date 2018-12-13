@@ -7,14 +7,17 @@ git clone https://github.com/idmyn/MainLibraryBusyBot
 cd MainLibraryBusyBot
 npm install
 ```
+NOTE: you'll need to edit chat.js with your Telegram Bot API token for it to work. You can obtain this by talking to [@botfather](t.me/BotFather).
 
 ## Usage
 ```bash
-node busy.js
+npm start
 ```
 
 ## Caveats
-Running ```node db-update.js``` should update (or create) your local database file, but it currently needs to be manually ran periodically, and has no interaction with the bot. I plan to link the bot and database soon, such that ```node busy.js``` will magically read and update the database regularly in the background!
+```npm start``` should start the chatbot and database-updater concurrently, but there is currently no interaction between the two: the chatbot looks up data from the university each time a request is made.
+
+I plan to add historical data lookup to the chatbot soon!
 
 ## Credits
 This bot was built with the [node-telegram-bot-api](https://github.com/yagop/node-telegram-bot-api) and [the data referenced in this bot](https://www.ed.ac.uk/information-services/library-museum-gallery) is generously publicised by The University of Edinburgh.
