@@ -35,36 +35,36 @@ My email address is hello@davidmyno.rs 👨‍💻
   else {
     const request = require('request')
     request.get('https://lac-edwebtools.is.ed.ac.uk/discovered/occupy/MainLibrary.json', function (error, response, body) {
-        if (!error && response.statusCode == 200) {
-            const obj = JSON.parse(body)
+      if (!error && response.statusCode == 200) {
+          const obj = JSON.parse(body)
 
-            // the percentage and "level" aren't always in the same place
-            let i = 0
-            while (obj.states[i].percent === undefined && i < 4){
-              i++
-            }
+          // the percentage and "level" aren't always in the same place
+          let i = 0
+          while (obj.states[i].percent === undefined && i < 4){
+            i++
+          }
 
-            const time = obj.time
-            const percent = obj.states[i].percent + '%'
+          const time = obj.time
+          const percent = obj.states[i].percent + '%'
 
-            let level = obj.states[i].level
-            if (obj.states[i].level === 'increasing') {
-              level = '(and ' + level + ').'
-            } else {
-              level = '(but ' + level + '!)'
-            }
+          let level = obj.states[i].level
+          if (obj.states[i].level === 'increasing') {
+            level = '(and ' + level + ').'
+          } else {
+            level = '(but ' + level + '!)'
+          }
 
-            const data = 'As of ' + time + ' the library is *' +
-                         percent + ' full* ' + level
+          const data = 'As of ' + time + ' the library is *' +
+                       percent + ' full* ' + level
 
-            const aside = "\nNeed help? Type 'help'!"
-            const response = data + aside
+          const aside = "\nNeed help? Type 'help'!"
+          const response = data + aside
 
-            bot.sendMessage(msg.chat.id, response, {parse_mode: 'Markdown'})
-        } else {
-          const error = "Something's gone wrong... Please contact hello@davidmyno.rs"
-          bot.sendMessage(msg.chat.id, error)
-        }
+          bot.sendMessage(msg.chat.id, response, {parse_mode: 'Markdown'})
+      } else {
+        const error = "Something's gone wrong... Please contact hello@davidmyno.rs"
+        bot.sendMessage(msg.chat.id, error)
+      }
     })
   }
 })
