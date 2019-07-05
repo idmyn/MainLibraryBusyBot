@@ -1,5 +1,5 @@
 # MainLibraryBusyBot
-An unofficial Telegram bot to check how busy the University of Edinburgh's Main Library is. [Check it out!](https://t.me/MainLibraryBusyBot)
+An unofficial Telegram bot to check how busy the University of Edinburgh's Main Library is. **This bot is currently offline** because the University have (understandably) stopped updating the library occupancy data during the Summer break.
 
 ## Install
 ```bash
