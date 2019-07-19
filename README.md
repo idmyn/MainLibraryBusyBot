@@ -7,7 +7,7 @@ git clone https://github.com/idmyn/MainLibraryBusyBot
 cd MainLibraryBusyBot
 npm install
 ```
-NOTE: you'll need to edit chat.js with your Telegram Bot API token for it to work. You can obtain this by talking to [@botfather](t.me/BotFather).
+NOTE: **you'll need to edit chat.js with your Telegram Bot API token for it to work**. You can obtain this by talking to [@botfather](t.me/BotFather).
 
 ## Usage
 ```bash
