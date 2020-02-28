@@ -14,4 +14,6 @@ ENV PATH /opt/node_app/node_modules/.bin:$PATH
 WORKDIR /opt/node_app/app
 COPY . .
 
+ENV NODE_ENV docker
+
 CMD [ "node", "chat.js" ]
